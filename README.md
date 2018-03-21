@@ -1,4 +1,4 @@
-Entorno de gestión de aplicaciones con react y electron
+Entorno de gestión de aplicaciones de escritorio
 
 ### Instalación
 ```
@@ -10,6 +10,7 @@ npm install
 ### Producción
 
 ```
+npm run build
 npm run electron
 
 ```
