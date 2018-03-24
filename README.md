@@ -11,7 +11,6 @@ npm install
 
 ```
 npm run dev
-
 ```
 
 ### Producción
@@ -19,28 +18,21 @@ npm run dev
 ```
 npm run build
 npm run electron
-
 ```
 
 ### Empaquetado
 
 windows:
-
 ```
-package-win
-
+npm run package-win
 ```
 
 linux:
-
 ```
-package-linux
-
+npm run package-linux
 ```
 
 mac:
-
 ```
-package-mac
-
+npm run package-mac
 ```
