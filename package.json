@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "electron": "^1.8.4",
+    "electron-packager": "^11.2.0",
     "foreman": "^2.0.0",
     "react-scripts": "1.1.1"
   },
@@ -22,6 +23,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "dev": "nf start"
+    "dev": "nf start",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/favicon.ico --prune=true --out=release-builds",
+    "package-win": "electron-packager . gestion-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=public/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Gestion App\"",    
+    "package-linux": "electron-packager . gestion-app --overwrite --asar=true --platform=linux --arch=x64 --icon=public/favicon.ico --prune=true --out=release-builds"
   }
 }

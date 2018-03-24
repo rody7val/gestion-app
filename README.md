@@ -7,6 +7,13 @@ npm install
 
 ```
 
+### Desarrollo
+
+```
+npm run dev
+
+```
+
 ### Producción
 
 ```
@@ -15,9 +22,25 @@ npm run electron
 
 ```
 
-### Desarrollo
+### Empaquetado
+
+windows:
 
 ```
-npm run dev
+package-win
+
+```
+
+linux:
+
+```
+package-linux
+
+```
+
+mac:
+
+```
+package-mac
 
 ```
