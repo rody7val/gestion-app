@@ -13,7 +13,7 @@ export default class Home extends Component<Props> {
       <div>
         <div className="container">
           <h2>Home</h2>
-          <Link to="/counter">to Counter</Link>
+          <Link to="/users">Usuarios</Link>
         </div>
       </div>
     );

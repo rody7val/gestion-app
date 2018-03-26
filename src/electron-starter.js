@@ -1,11 +1,21 @@
 const electron = require('electron');
-// Module to control application life.
-const app = electron.app;
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow;
-
+const express = require('express');
+const bodyParser = require('body-parser');
+const db = require('mongoose');
+const cors = require('cors');
 const path = require('path');
 const url = require('url');
+
+const app = electron.app;
+const server = express();
+const BrowserWindow = electron.BrowserWindow;
+const api = require('./api/routes')(express);
+
+db.connect('mongodb://localhost/gestion-app');
+server.use(cors());
+server.use(bodyParser.urlencoded({extended: true}));
+server.use(bodyParser.json());
+server.use('/', api);
 
 let mainWindow;
 
@@ -17,8 +27,8 @@ const createWindow = () => {
         protocol: 'file:',
         slashes: true
     });
-    mainWindow.loadURL(startUrl);
 
+    mainWindow.loadURL(startUrl);
     // mainWindow.webContents.openDevTools();
 
     mainWindow.on('closed', function () {
@@ -26,16 +36,22 @@ const createWindow = () => {
     })
 }
 
-app.on('ready', createWindow);
-
-app.on('window-all-closed', function () {
-    if (process.platform !== 'darwin') {
-        app.quit()
+server.listen(8000, (err) => {
+    if (err) {
+        console.log(err)
     }
-});
 
-app.on('activate', function () {
-    if (mainWindow === null) {
-        createWindow()
-    }
+    app.on('ready', createWindow);
+    
+    app.on('window-all-closed', function () {
+        if (process.platform !== 'darwin') {
+            app.quit()
+        }
+    });
+    
+    app.on('activate', function () {
+        if (mainWindow === null) {
+            createWindow()
+        }
+    });
 });

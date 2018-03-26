@@ -3,7 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
     "font-awesome": "^4.7.0",
+    "mongoose": "^5.0.11",
+    "mongoose-deep-populate": "^3.1.1",
+    "mongoose-unique-validator": "^2.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
@@ -25,7 +31,7 @@
     "electron": "electron .",
     "dev": "nf start",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/favicon.ico --prune=true --out=release-builds",
-    "package-win": "electron-packager . gestion-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=public/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Gestion App\"",    
+    "package-win": "electron-packager . gestion-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=public/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Gestion App\"",
     "package-linux": "electron-packager . gestion-app --overwrite --asar=true --platform=linux --arch=x64 --icon=public/favicon.ico --prune=true --out=release-builds"
   }
 }
